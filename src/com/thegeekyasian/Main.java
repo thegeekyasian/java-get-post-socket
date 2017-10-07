@@ -12,15 +12,15 @@ public class Main {
             Map<String, String> responseMap;
 
             responseMap = HttpClient.sendGetRequest(GET_URL);
-            System.out.println(responseMap.get("header"));
-            System.out.println(responseMap.get("content"));
+            System.out.println("Header: \n" + responseMap.get("header"));
+            System.out.println("Content: \n" + responseMap.get("content"));
 
             String data = "{" +
                     "\"author\" : \"The Geeky Asian\"," +
                     "\"course\" : \"POST Request Using Sockets in Java\"" +
                     "}";
             responseMap = HttpClient.sendPostRequest(POST_URL, data);
-            System.out.println(responseMap.get("content"));
+            System.out.println("Content: \n" + responseMap.get("content"));
         }
         catch (Exception e){
             e.printStackTrace();
